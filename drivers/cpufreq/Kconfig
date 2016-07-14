@@ -181,6 +181,12 @@ config CPU_FREQ_DEFAULT_GOV_ADAPTIVE
 	  'adaptive' governor for latency-sensitive workloads and demanding
 	  performance.
 
+config CPU_FREQ_DEFAULT_GOV_ZZMOOVE
+  bool "zzmoove"
+  select CPU_FREQ_GOV_ZZMOOVE
+  select CPU_FREQ_GOV_PERFORMANCE
+  help
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -353,6 +359,11 @@ config CPU_FREQ_GOV_ADAPTIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
+
+config CPU_FREQ_GOV_ZZMOOVE
+	tristate "'zzmoove' cpufreq governor"
+	depends on CPU_FREQ
+	help
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
