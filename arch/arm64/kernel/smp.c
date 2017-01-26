@@ -234,7 +234,16 @@ void __cpu_die(unsigned int cpu)
 		pr_crit("CPU%u: cpu didn't die\n", cpu);
 		return;
 	}
-	pr_notice("CPU%u: shutdown\n", cpu);
+	pr_debug("CPU%u: shutdown\n", cpu);
+
+	/*
+	 * Now that the dying CPU is beyond the point of no return w.r.t.
+	 * in-kernel synchronisation, try to get the firwmare to help us to
+	 * verify that it has really left the kernel before we consider
+	 * clobbering anything it might still be using.
+	 */
+	if (!op_cpu_kill(cpu))
+		pr_warn("CPU%d may not have shut down cleanly\n", cpu);
 }
 
 /*
