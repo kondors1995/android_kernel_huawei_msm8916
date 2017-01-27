@@ -13,7 +13,7 @@ then
         then
             export ARCH=arm
             export CROSS_COMPILE=~/Android/Kernel/toolchains/arm-eabi-6.x-uber/bin/arm-eabi-
-            make g620s_defconfig
+            cm_hwY550_defconfig
             echo "Enter number of threads: "
             read input_variable
             echo "You entered: $input_variable"
@@ -34,7 +34,7 @@ then
 
             export ARCH=arm
             export CROSS_COMPILE=~/Android/Kernel/toolchains/arm-eabi-6.x-uber/bin/arm-eabi-
-            make g620s_defconfig
+            cm_hwY550_defconfig
             echo "Enter number of threads: "
             read input_variable
             echo "You entered: $input_variable"
