@@ -679,7 +679,7 @@ config ZEN_DECISION
 	  - Remove cores when screen goes off
 	  - Enable cores when screen goes on
 	  - Raise CPU_MIN_FREQ to a fixed value for a few seconds on input
-  
+
 	  Zen Decision allows some of the MPDecison functions to be delegated
 	  to the kernel. Right now these are
 	  - Remove cores when screen goes off (after a configurable amount of time)
@@ -1089,7 +1089,7 @@ config HUAWEI_FEATURE_NFF
 	depends on HUAWEI_KERNEL
         default n
 	help
-	  in debug mode,you can use sysrq and dump mode 	 
+	  in debug mode,you can use sysrq and dump mode
 
 config HUAWEI_THERMAL
 	bool "Use huawei thermal code"
